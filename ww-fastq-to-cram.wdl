@@ -25,8 +25,8 @@ workflow PairedFastqsToUnmappedCram {
     Array[InputData] batch_info
   }
 
-  String gatk_docker = "ghcr.io/getwilds/gatk:4.3.0.0"
-  String samtools_docker = "ghcr.io/getwilds/samtools:1.11"
+  String gatk_docker = "getwilds/gatk:4.3.0.0"
+  String samtools_docker = "getwilds/samtools:1.11"
 
   scatter (sample in batch_info) { # for every sample in your batch,
     String base_file_name = sample.sample_name + "_" + sample.dataset_id
